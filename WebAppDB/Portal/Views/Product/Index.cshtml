@@ -1,0 +1,18 @@
+﻿@using BOL;
+
+
+@{
+    ViewData["Title"] = "Product Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h2>Product Page</h2>
+    @{
+        List<Product> allProducts=(List<Product>)this.ViewData["Product"];
+            foreach( Product p in allProducts){
+                <p> @p</p>
+            }
+    }
+
+</div>
