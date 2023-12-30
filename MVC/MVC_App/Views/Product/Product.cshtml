@@ -1,0 +1,69 @@
+@using BOL;
+
+@{
+    ViewData["Title"] = "Product List";
+}
+
+<div class="text-center">
+
+    <marquee width="60%" direction="up" height="100px">
+        <h1 style="border: 2px; color:rgb(255, 0, 212);text-align:center">PRODUCT CATALOG </h1>
+    </marquee>
+
+
+    @{
+        List<Product> allProducts = (List<Product>)ViewData["myViewData"];
+
+
+        <table border="2px" style="width:100%; color:black
+              ">
+            <tr>
+                <th>Product_Id</th>
+                <th>Product_Name</th>
+                <th>Product_Qty</th>
+                <th>Product_Price</th>
+                <th>Options</th>
+            </tr>
+
+            @foreach (Product product in allProducts)
+            {
+                {
+                    <tr>
+                        <td style="color:red">
+                            @product.pid
+                            <hr style="color: black;">
+                        </td>
+                        <td style="color:red">
+                            @product.pname
+                            <hr style="color: black; ">
+                        </td>
+
+
+
+                        <td style="color:red">
+                            @product.pqty
+                            <hr style="color: black;">
+                        </td>
+
+
+
+                        <td style="color:red">
+                            @product.price
+                            <hr style="color: black;">
+                        </td>
+                        <td>
+                            <a href="insert">Insert</a>
+                            <a href="update">Edit</a>
+                            <a href="delete">Delete</a>
+                            <hr>
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+
+
+
+    }
+
+</div>
