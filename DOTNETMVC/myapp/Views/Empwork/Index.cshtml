@@ -1,0 +1,50 @@
+﻿@using BOL;
+@{
+    ViewData["Title"] = "Emp work";
+}
+@{
+    List<Empwork> empworks = ViewData["work"] as List<Empwork>;
+}
+
+
+<table class="table ">
+
+
+
+
+    <thead class="thead-dark">
+        <tr>
+
+            <th scope="col">Date</th>
+            <th scope="col">Description</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Status</th>
+            <th scope="col">Details</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Empwork work in empworks)
+        {
+            <tr>
+
+                <td>@work.Date1</td>
+                <td>@work.Description</td>
+                <td>@work.Duration</td>
+                <td>@work.Status</td>
+                <td>
+                    <form action="/Empwork/Details" method="get">
+                        <input type="hidden" name="date1" value="@work.Date1">
+                        <button type="submit" class="btn btn-info">Show</button>
+                    </form>
+                </td>
+            </tr>
+
+
+        }
+    </tbody>
+</table>
+
+<form action="/Empwork/Add" method="get">
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
