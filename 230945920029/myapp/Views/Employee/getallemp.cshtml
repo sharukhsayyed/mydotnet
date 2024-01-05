@@ -1,0 +1,55 @@
+@using BOL;
+
+
+@{
+    ViewData["Title"]="Employees Page";
+}
+
+
+<div>
+ <table class="table table-striped">
+  <thead>
+    <tr>
+        <th scope="col">Employee_Id</th>
+        <th scope="col">Employee_Name</th>
+        <th scope="col">Employee_email</th>
+        <th scope="col">Employee_Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    @foreach(Employee e in ViewBag.list){
+        <tr scope="row">
+            <td>
+                @e.eid
+            </td>
+            <td>
+                @e.ename
+            </td>
+            <td>
+                @e.eemail
+            </td>
+            <td>
+                @e.contactNumber
+            </td>
+            <td>
+                <form method="get" action="/employee/edit">
+                    <input type="hidden" name="empId" value="@e.eid"/>
+                    <button>Edit</button>
+                </form>
+            </td>
+             @* <td>
+                <form method="get" action="/employee/delete">
+                    <input type="hidden" name="empId" value="@e.eid"/>
+                    <button>Delete</button>
+                </form>
+            </td> *@
+
+        </tr>
+    }
+
+  </tbody>
+
+ </table>
+
+</div>

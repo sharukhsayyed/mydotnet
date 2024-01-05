@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"]="EditEmployee Page";
+}
+
+
+<div>
+
+    <form method="post" action="/employee/edit">
+        <input class="form-control" type="number" name="id" value="@ViewBag.obj.eid"/>
+        <input class="form-control" type="text" name="name" value="@ViewBag.obj.ename"/>
+        <input class="form-control" type="text" name="email" value="@ViewBag.obj.eemail"/>
+        <input class="form-control" type="text" name="pnumber" value="@ViewBag.obj.contactNumber"/>
+        <button class="btn btn-primary">Update</button>
+    </form>
+</div>
