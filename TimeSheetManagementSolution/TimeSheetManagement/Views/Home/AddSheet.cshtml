@@ -1,0 +1,34 @@
+@using BOL;
+@using BLL;
+@using DAL.Connected;
+@{
+    ViewData["Title"] = "Enter TimeSheet";
+}
+<div>
+    <form method="post">
+        <fieldset>
+            <legend>TimeSheets</legend>
+            <div>
+                <label for="TimeSheet">Enter Id :</label>
+                <input type="text" name="id" value="">
+            </div>
+            <div>
+                <label for="TimeSheet">Enter Date :</label>
+                <input type="text" name="date" value="">
+            </div>
+            <div>
+                <label for="TimeSheet">Enter Work Description :</label>
+                <input type="text" name="workDescription" value="">
+            </div>
+            <div>
+                <label for="TimeSheet">Enter Duration :</label>
+                <input type="text" name="duration" value="">
+            </div>
+            <div>
+                <label for="TimeSheet">Enter Status :</label>
+                <input type="text" name="status" value="">
+            </div>
+            <input type="submit" name="submit" value="submit" class="btn btn-info" />
+        </fieldset>
+    </form>
+</div>

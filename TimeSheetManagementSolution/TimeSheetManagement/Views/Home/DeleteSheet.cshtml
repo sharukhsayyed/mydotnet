@@ -1,0 +1,18 @@
+@using BOL;
+@using BLL;
+@using DAL.Connected;
+@{
+    ViewData["Title"] = "Delete TimeSheet";
+}
+<div>
+    <form method="post">
+        <fieldset>
+            <legend>TimeSheets</legend>
+            <div>
+                <label for="TimeSheet">Enter Id :</label>
+                <input type="text" name="id" value="">
+            </div>
+            <input type="submit" name="submit" value="submit" class="btn btn-info" />
+        </fieldset>
+    </form>
+</div>

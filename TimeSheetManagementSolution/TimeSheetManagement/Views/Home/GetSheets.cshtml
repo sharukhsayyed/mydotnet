@@ -1,0 +1,32 @@
+@using BOL;
+@using BLL;
+@using DAL.Connected;
+@using System.Collections.Generic;
+<h1 style="text-align: center;">TimeSheet Description</h1>
+@{
+    List<TimeSheet> ts1 = (List<TimeSheet>)ViewData["alltimesheets"];
+    <table border="5px" style="width: 100%;">
+        <tr>
+            <th>Id</th>
+            <th>Date</th>
+            <th>Work Description</th>
+            <th>Duration</th>
+            <th>Status</th>
+        </tr>
+        @{
+            foreach (TimeSheet s in ts1)
+            {
+                <tr>
+                    <td>@s.id</td>
+                    <td>@s.date</td>
+                    <td>@s.workDescription</td>
+                    <td>@s.duration</td>
+                    <td>@s.status</td>
+                </tr>
+            }
+        }
+    </table>
+    <button><a href="/Home/AddSheet"> Add Sheet </a></button>
+    <button><a href="/Home/DeleteSheet">Delete Sheet</a></button>
+
+}
